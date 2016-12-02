@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class BencodeDeserializer {
 
     /**
-     * Неверный формат данных
+     * РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…
      */
     public static class InvalidFormatException extends Exception {
 
@@ -35,8 +35,8 @@ public class BencodeDeserializer {
     }
 
     /**
-     * @return значение одного из bencode-типов, или null, если значения закончились - в случае,
-     * если достигнут конец потока или коллекции.
+     * @return Р·РЅР°С‡РµРЅРёРµ РѕРґРЅРѕРіРѕ РёР· bencode-С‚РёРїРѕРІ, РёР»Рё null, РµСЃР»Рё Р·РЅР°С‡РµРЅРёСЏ Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ - РІ СЃР»СѓС‡Р°Рµ,
+     * РµСЃР»Рё РґРѕСЃС‚РёРіРЅСѓС‚ РєРѕРЅРµС† РїРѕС‚РѕРєР° РёР»Рё РєРѕР»Р»РµРєС†РёРё.
      */
     public Object read() throws IOException, InvalidFormatException {
         ByteArrayOutputStream header = new ByteArrayOutputStream();

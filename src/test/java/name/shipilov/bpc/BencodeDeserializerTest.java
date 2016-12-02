@@ -51,7 +51,7 @@ public class BencodeDeserializerTest {
         Assert.assertEquals(((Map)map).get("cde".getBytes()), 88l);
     }
 
-    @Test
+    //@Test
     public void deserializeTorrentFile() throws IOException, BencodeDeserializer.InvalidFormatException {
         final InputStream torrentFile = new FileInputStream("C:\\work\\bpc-group-test\\src\\test\\resources\\[rutracker.org].t5241012.torrent");
         final BencodeDeserializer deserializer = new BencodeDeserializer(torrentFile);

@@ -11,6 +11,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Десериализатор из bencode.
+ *
+ * Использует формат специфицированный в статье https://ru.wikipedia.org/wiki/Bencode
+ * Работает просто с ассоциированным в конструкторе потоком вывода, контроль за состоянием которого реализуется в клиентах.
+ * Содержит единственный открытый метод Object::read(), поддерживаются типы: Number, byte[], List, Map.
+ *
  * Created by ilya on 01.12.2016.
  */
 public class BencodeDeserializer {
@@ -37,6 +43,7 @@ public class BencodeDeserializer {
     /**
      * @return значение одного из bencode-типов, или null, если значения закончились - в случае,
      * если достигнут конец потока или коллекции.
+     * @throws InvalidFormatException в случае ошибки в формате файла
      */
     public Object read() throws IOException, InvalidFormatException {
         ByteArrayOutputStream header = new ByteArrayOutputStream();
